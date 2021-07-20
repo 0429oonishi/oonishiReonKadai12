@@ -6,5 +6,6 @@ target 'oonishiReonKadai12' do
   use_frameworks!
 
   # Pods for oonishiReonKadai12
-
+   pod 'RxSwift'
+   pod 'RxCocoa'
 end
