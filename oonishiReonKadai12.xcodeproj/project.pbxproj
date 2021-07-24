@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,8 +56,28 @@
 				E59394EAAA318580FAED5CE2 /* Pods-oonishiReonKadai12.debug.xcconfig */,
 				449EDE712B9870765333B4CA /* Pods-oonishiReonKadai12.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AB1242AA26AC59010082F1FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB1242AB26AC59070082F1FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AB1242AC26AC590A0082F1FD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		AB1CB8D526A68C7500995AC8 = {
@@ -81,6 +101,9 @@
 		AB1CB8E026A68C7500995AC8 /* oonishiReonKadai12 */ = {
 			isa = PBXGroup;
 			children = (
+				AB1242AC26AC590A0082F1FD /* ViewModels */,
+				AB1242AB26AC59070082F1FD /* Models */,
+				AB1242AA26AC59010082F1FD /* Views */,
 				AB1CB8E126A68C7500995AC8 /* AppDelegate.swift */,
 				AB1CB8E326A68C7500995AC8 /* SceneDelegate.swift */,
 				AB1CB8E526A68C7500995AC8 /* ViewController.swift */,
