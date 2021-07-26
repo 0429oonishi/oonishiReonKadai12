@@ -62,6 +62,8 @@
 		AB1242AA26AC59010082F1FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AB1CB8E726A68C7500995AC8 /* Main.storyboard */,
+				AB1CB8E526A68C7500995AC8 /* ViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,8 +108,6 @@
 				AB1242AA26AC59010082F1FD /* Views */,
 				AB1CB8E126A68C7500995AC8 /* AppDelegate.swift */,
 				AB1CB8E326A68C7500995AC8 /* SceneDelegate.swift */,
-				AB1CB8E526A68C7500995AC8 /* ViewController.swift */,
-				AB1CB8E726A68C7500995AC8 /* Main.storyboard */,
 				AB1CB8EA26A68C7600995AC8 /* Assets.xcassets */,
 				AB1CB8EC26A68C7600995AC8 /* LaunchScreen.storyboard */,
 				AB1CB8EF26A68C7600995AC8 /* Info.plist */,
