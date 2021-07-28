@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21E4175C516C367E6EFED32F /* Pods_oonishiReonKadai12.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2766D0D624399B3AB2401E8 /* Pods_oonishiReonKadai12.framework */; };
+		AB1242AE26B1A1B90082F1FD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1242AD26B1A1B90082F1FD /* ViewModel.swift */; };
 		AB1CB8E226A68C7500995AC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CB8E126A68C7500995AC8 /* AppDelegate.swift */; };
 		AB1CB8E426A68C7500995AC8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CB8E326A68C7500995AC8 /* SceneDelegate.swift */; };
 		AB1CB8E626A68C7500995AC8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1CB8E526A68C7500995AC8 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		449EDE712B9870765333B4CA /* Pods-oonishiReonKadai12.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oonishiReonKadai12.release.xcconfig"; path = "Target Support Files/Pods-oonishiReonKadai12/Pods-oonishiReonKadai12.release.xcconfig"; sourceTree = "<group>"; };
+		AB1242AD26B1A1B90082F1FD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AB1CB8DE26A68C7500995AC8 /* oonishiReonKadai12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oonishiReonKadai12.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB1CB8E126A68C7500995AC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB1CB8E326A68C7500995AC8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		AB1242AC26AC590A0082F1FD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AB1242AD26B1A1B90082F1FD /* ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -103,9 +106,9 @@
 		AB1CB8E026A68C7500995AC8 /* oonishiReonKadai12 */ = {
 			isa = PBXGroup;
 			children = (
-				AB1242AC26AC590A0082F1FD /* ViewModels */,
 				AB1242AB26AC59070082F1FD /* Models */,
 				AB1242AA26AC59010082F1FD /* Views */,
+				AB1242AC26AC590A0082F1FD /* ViewModels */,
 				AB1CB8E126A68C7500995AC8 /* AppDelegate.swift */,
 				AB1CB8E326A68C7500995AC8 /* SceneDelegate.swift */,
 				AB1CB8EA26A68C7600995AC8 /* Assets.xcassets */,
@@ -231,6 +234,7 @@
 			files = (
 				AB1CB8E626A68C7500995AC8 /* ViewController.swift in Sources */,
 				AB1CB8E226A68C7500995AC8 /* AppDelegate.swift in Sources */,
+				AB1242AE26B1A1B90082F1FD /* ViewModel.swift in Sources */,
 				AB1CB8E426A68C7500995AC8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
