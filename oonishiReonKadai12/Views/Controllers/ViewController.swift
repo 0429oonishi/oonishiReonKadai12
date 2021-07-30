@@ -22,6 +22,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.inputs.viewDidLoad()
         setupBindings()
         
     }
@@ -42,7 +43,11 @@ final class ViewController: UIViewController {
             })
             .disposed(by: disposeBag)
 
-        
+        viewModel.outputs.consumptionTaxNum
+            .drive(onNext: { [weak self] consumptionTaxNum in
+                self?.consumptionTaxTextField.text = String(consumptionTaxNum)
+            })
+            .disposed(by: disposeBag)
     }
 
 }

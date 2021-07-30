@@ -15,6 +15,9 @@
 		AB1CB8E926A68C7500995AC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB1CB8E726A68C7500995AC8 /* Main.storyboard */; };
 		AB1CB8EB26A68C7600995AC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB1CB8EA26A68C7600995AC8 /* Assets.xcassets */; };
 		AB1CB8EE26A68C7600995AC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB1CB8EC26A68C7600995AC8 /* LaunchScreen.storyboard */; };
+		ABA056EB26B3BB2400E3DF01 /* TaxUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA056EA26B3BB2400E3DF01 /* TaxUseCase.swift */; };
+		ABA056ED26B3BB4900E3DF01 /* TaxRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA056EC26B3BB4900E3DF01 /* TaxRepository.swift */; };
+		ABA056EF26B3BD1500E3DF01 /* TaxUserDefaultsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA056EE26B3BD1500E3DF01 /* TaxUserDefaultsDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		AB1CB8EA26A68C7600995AC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB1CB8ED26A68C7600995AC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB1CB8EF26A68C7600995AC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABA056EA26B3BB2400E3DF01 /* TaxUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxUseCase.swift; sourceTree = "<group>"; };
+		ABA056EC26B3BB4900E3DF01 /* TaxRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxRepository.swift; sourceTree = "<group>"; };
+		ABA056EE26B3BD1500E3DF01 /* TaxUserDefaultsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxUserDefaultsDataStore.swift; sourceTree = "<group>"; };
 		E59394EAAA318580FAED5CE2 /* Pods-oonishiReonKadai12.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oonishiReonKadai12.debug.xcconfig"; path = "Target Support Files/Pods-oonishiReonKadai12/Pods-oonishiReonKadai12.debug.xcconfig"; sourceTree = "<group>"; };
 		F2766D0D624399B3AB2401E8 /* Pods_oonishiReonKadai12.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oonishiReonKadai12.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -64,8 +70,8 @@
 		AB1242AA26AC59010082F1FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AB1CB8E726A68C7500995AC8 /* Main.storyboard */,
-				AB1CB8E526A68C7500995AC8 /* ViewController.swift */,
+				ABA056E926B3BABA00E3DF01 /* Storyboards */,
+				ABA056E826B3BAB600E3DF01 /* Controllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -73,6 +79,9 @@
 		AB1242AB26AC59070082F1FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ABA056EA26B3BB2400E3DF01 /* TaxUseCase.swift */,
+				ABA056EC26B3BB4900E3DF01 /* TaxRepository.swift */,
+				ABA056EE26B3BD1500E3DF01 /* TaxUserDefaultsDataStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,6 +125,22 @@
 				AB1CB8EF26A68C7600995AC8 /* Info.plist */,
 			);
 			path = oonishiReonKadai12;
+			sourceTree = "<group>";
+		};
+		ABA056E826B3BAB600E3DF01 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB1CB8E526A68C7500995AC8 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ABA056E926B3BABA00E3DF01 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AB1CB8E726A68C7500995AC8 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +257,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA056EB26B3BB2400E3DF01 /* TaxUseCase.swift in Sources */,
 				AB1CB8E626A68C7500995AC8 /* ViewController.swift in Sources */,
 				AB1CB8E226A68C7500995AC8 /* AppDelegate.swift in Sources */,
+				ABA056ED26B3BB4900E3DF01 /* TaxRepository.swift in Sources */,
 				AB1242AE26B1A1B90082F1FD /* ViewModel.swift in Sources */,
+				ABA056EF26B3BD1500E3DF01 /* TaxUserDefaultsDataStore.swift in Sources */,
 				AB1CB8E426A68C7500995AC8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
