@@ -22,22 +22,26 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // setupBindings()を先に読む
         setupBindings()
         viewModel.inputs.viewDidLoad()
         
     }
 
     private func setupBindings() {
+        // selfが不要な形
         calculateButton.rx.tap
             .withLatestFrom(excludingTaxTextField.rx.text)
             .withLatestFrom(consumptionTaxTextField.rx.text, resultSelector: { ($0, $1) })
             .subscribe(onNext: viewModel.inputs.calculateButtonDidTapped)
             .disposed(by: disposeBag)
         
+        // viewModelからの出力をそのままバインド
         viewModel.outputs.includingTaxText
             .drive(includingTaxLabel.rx.text)
             .disposed(by: disposeBag)
-
+        
+        // viewModelからの出力をそのままバインド
         viewModel.outputs.consumptionTaxText
             .drive(consumptionTaxTextField.rx.text)
             .disposed(by: disposeBag)
