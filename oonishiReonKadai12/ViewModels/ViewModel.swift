@@ -39,6 +39,7 @@ final class ViewModel: ViewModelInput, ViewModelOutput {
         taxUseCase.loadConsumptionTax()
     }
     
+    // UseCaseからの出力を適切に変換してViewへ流す
     private func setupBindings() {
         taxUseCase.consumptionTax.compactMap { $0 }
             .map { String($0) }
