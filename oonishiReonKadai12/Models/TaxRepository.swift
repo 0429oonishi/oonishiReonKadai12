@@ -7,6 +7,8 @@
 
 import RxSwift
 
+// 何を保存するのかを明記する
+// 非同期も扱えるように
 protocol TaxRepositoryProtocol: AnyObject {
     func save(consumptionTax: Int) -> Completable
     func loadConsumptionTax() -> Single<Int>
