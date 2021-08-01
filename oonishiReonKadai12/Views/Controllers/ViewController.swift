@@ -22,33 +22,25 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.inputs.viewDidLoad()
         setupBindings()
-        
+        viewModel.inputs.viewDidLoad()
     }
 
     private func setupBindings() {
         calculateButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.viewModel.inputs.calculateButtonDidTapped(
-                    excludingTaxText: self?.excludingTaxTextField.text,
-                    consumptionTaxText: self?.consumptionTaxTextField.text
-                )
-            })
-            .disposed(by: disposeBag)
-        
-        viewModel.outputs.includingTaxText
-            .drive(onNext: { [weak self] text in
-                self?.includingTaxLabel.text = text
-            })
+            .withLatestFrom(excludingTaxTextField.rx.text)
+            .withLatestFrom(consumptionTaxTextField.rx.text, resultSelector: { ($0, $1) })
+            .subscribe(onNext: viewModel.inputs.calculateButtonDidTapped)
             .disposed(by: disposeBag)
 
-        viewModel.outputs.consumptionTaxNum
-            .drive(onNext: { [weak self] consumptionTaxNum in
-                self?.consumptionTaxTextField.text = String(consumptionTaxNum)
-            })
+        viewModel.outputs.includingTaxText
+            .drive(includingTaxLabel.rx.text)
             .disposed(by: disposeBag)
-    }
+
+        viewModel.outputs.consumptionTaxText
+            .drive(consumptionTaxTextField.rx.text)
+            .disposed(by: disposeBag)
+   }
 
 }
 

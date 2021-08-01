@@ -7,20 +7,20 @@
 
 import Foundation
 
-protocol DataStoreProtocol: AnyObject {
-    func save(num: Int)
-    func get() -> Int
+protocol TaxDataStoreProtocol: AnyObject {
+    func save(consumptionTax: Int)
+    func loadConsumptionTax() -> Int
 }
 
-final class TaxUserDefaultsDataStore: DataStoreProtocol {
+final class TaxUserDefaultsDataStore: TaxDataStoreProtocol {
     
     private let saveKey = "saveKey"
     
-    func save(num: Int) {
-        UserDefaults.standard.set(num, forKey: saveKey)
+    func save(consumptionTax: Int) {
+        UserDefaults.standard.set(consumptionTax, forKey: saveKey)
     }
     
-    func get() -> Int {
+    func loadConsumptionTax() -> Int {
         return UserDefaults.standard.integer(forKey: saveKey)
     }
     
