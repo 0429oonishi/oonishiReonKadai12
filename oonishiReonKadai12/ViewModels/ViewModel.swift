@@ -17,7 +17,7 @@ protocol ViewModelInput {
 
 protocol ViewModelOutput: AnyObject {
     var includingTaxText: Driver<String> { get }
-    var consumptionTaxNum: Driver<Int> { get }
+    var consumptionTaxText: Driver<String> { get }
 }
 
 protocol ViewModelType {
@@ -32,19 +32,32 @@ final class ViewModel: ViewModelInput, ViewModelOutput {
             dataStore: TaxUserDefaultsDataStore()
         )
     )
+    private let disposeBag = DisposeBag()
     
     func viewDidLoad() {
-        let consumptionTaxNum = taxUseCase.getTaxNum()
-        consumptionTaxNumRelay.accept(consumptionTaxNum)
+        setupBindings()
+        taxUseCase.loadConsumptionTax()
+    }
+    
+    private func setupBindings() {
+        taxUseCase.consumptionTax.compactMap { $0 }
+            .map { String($0) }
+            .bind(to: consumptionTaxTextRelay)
+            .disposed(by: disposeBag)
+        
+        taxUseCase.includingTax.compactMap { $0 }
+            .map { String($0) }
+            .bind(to: includingTaxTextRelay)
+            .disposed(by: disposeBag)
     }
     
     func calculateButtonDidTapped(excludingTaxText: String?,
                                   consumptionTaxText: String?) {
-        let excludingTaxNum = Int(excludingTaxText ?? "") ?? 0
-        let consumptionTaxNum = Int(consumptionTaxText ?? "") ?? 0
-        let includingTaxNum = excludingTaxNum * (100 + consumptionTaxNum) / 100
-        taxUseCase.saveTax(num: consumptionTaxNum)
-        includingTaxTextRelay.accept(String(includingTaxNum))
+        let excludingTax = Int(excludingTaxText ?? "") ?? 0
+        let consumptionTax = Int(consumptionTaxText ?? "") ?? 0
+        taxUseCase.saveTax(consumptionTax: consumptionTax)
+        taxUseCase.calculateIncludingTax(excludingTax: excludingTax,
+                                         consumptionTax: consumptionTax)
     }
     
     var includingTaxText: Driver<String> {
@@ -52,11 +65,10 @@ final class ViewModel: ViewModelInput, ViewModelOutput {
     }
     private let includingTaxTextRelay = BehaviorRelay<String>(value: "")
     
-    var consumptionTaxNum: Driver<Int> {
-        consumptionTaxNumRelay.asDriver()
+    var consumptionTaxText: Driver<String> {
+        consumptionTaxTextRelay.asDriver()
     }
-    private let consumptionTaxNumRelay = BehaviorRelay(value: 0)
-    
+    private let consumptionTaxTextRelay = BehaviorRelay(value: "")
     
 }
 
