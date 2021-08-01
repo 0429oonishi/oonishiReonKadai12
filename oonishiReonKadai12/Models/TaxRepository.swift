@@ -5,27 +5,28 @@
 //  Created by 大西玲音 on 2021/07/30.
 //
 
-import Foundation
+import RxSwift
 
 protocol TaxRepositoryProtocol: AnyObject {
-    func save(num: Int)
-    func get() -> Int
+    func save(consumptionTax: Int) -> Completable
+    func loadConsumptionTax() -> Single<Int>
 }
 
 final class TaxRepository: TaxRepositoryProtocol {
     
-    private let dataStore: DataStoreProtocol
+    private let dataStore: TaxDataStoreProtocol
     
-    init(dataStore: DataStoreProtocol) {
+    init(dataStore: TaxDataStoreProtocol) {
         self.dataStore = dataStore
     }
     
-    func save(num: Int) {
-        dataStore.save(num: num)
+    func save(consumptionTax: Int) -> Completable {
+        dataStore.save(consumptionTax: consumptionTax)
+        return Completable.empty()
     }
     
-    func get() -> Int {
-        return dataStore.get()
+    func loadConsumptionTax() -> Single<Int> {
+        return .just(dataStore.loadConsumptionTax())
     }
     
 }
