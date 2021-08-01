@@ -7,8 +7,11 @@
 
 import Foundation
 
+// Taxを扱うプロトコルであることを明記する
 protocol TaxDataStoreProtocol: AnyObject {
+    // 何を保存するのかを明記
     func save(consumptionTax: Int)
+    // 何を読み込むのかを明記
     func loadConsumptionTax() -> Int
 }
 
